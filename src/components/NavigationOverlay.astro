@@ -1,46 +1,60 @@
-<section class="section-navigation" data-nav>
-  <div class="section__overlay" data-nav-overlay></div>
+<section
+  class="section-navigation fixed inset-0 z-50"
+  data-nav
+>
+  <!-- Overlay -->
+  <div
+    class="section__overlay absolute inset-0 bg-black/60"
+    data-nav-overlay
+  ></div>
 
   <div
-    class="section__inner flex flex-col items-end min-h-screen px-6 pt-10 pb-8"
-    style="background-color:#0d0d0d;"
+    class="section__inner relative z-10 flex flex-col items-end min-h-screen px-6 pt-6 pb-10 bg-[#0d0d0d]"
   >
     <!-- Cerrar -->
-    <div class="menu-close mb-6" data-menu-close>
+    <button
+      class="menu-close mb-8 w-8 h-8 flex items-center justify-center"
+      data-menu-close
+      aria-label="Cerrar menú"
+    >
       <img
         src="https://www.stanchierifamilylaw.com/wp-content/themes/stanchieri-family-new/resources/images/icon-close.svg"
-        alt="Cerrar menú"
-        class="w-6 h-6 cursor-pointer invert"
+        alt=""
+        class="w-6 h-6 invert"
       />
-    </div>
+    </button>
 
     <!-- Menú -->
     <nav class="nav w-full">
-      <ul class="menu flex flex-col items-end text-right space-y-3">
+      <ul class="menu flex flex-col items-end text-right space-y-5">
         <li class="menu-item">
-          <a href="/services"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+          <a
+            href="/services"
+            class="block py-1 text-lg text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
           >
             Servicios
           </a>
         </li>
         <li class="menu-item">
-          <a href="/team"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+          <a
+            href="/team"
+            class="block py-1 text-lg text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
           >
             Equipo
           </a>
         </li>
         <li class="menu-item">
-          <a href="/about"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+          <a
+            href="/about"
+            class="block py-1 text-lg text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
           >
             Método
           </a>
         </li>
         <li class="menu-item">
-          <a href="/contact"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+          <a
+            href="/contact"
+            class="block py-1 text-lg text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
           >
             Contacto
           </a>
@@ -49,7 +63,10 @@
     </nav>
 
     <!-- Botón -->
-    <a href="/book-consultation" class="btn mt-auto">
+    <a
+      href="/book-consultation"
+      class="btn mt-auto w-full text-center text-base font-medium py-3 rounded-full border border-[#d4b35a] text-[#d4b35a]"
+    >
       Reservar consulta
     </a>
   </div>
