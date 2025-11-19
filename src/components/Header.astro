@@ -1,15 +1,17 @@
----
-// src/components/Header.astro
----
-
 <header class="header">
-  <div class="header__inner">
-    <a href="/" class="logo">
+  <div class="header__inner flex items-center">
+    <a href="/" class="logo flex items-center gap-3">
       <img
         src="/images/logo-osp.png"
         alt="OSP Abogadas"
         loading="lazy"
+        class="h-10 w-auto"
       />
+
+      <!-- El texto al lado -->
+      <span class="text-lg font-semibold uppercase tracking-wide text-white">
+        OSP Abogadas
+      </span>
     </a>
 
     <div class="menu-toggle" data-menu-toggle>
