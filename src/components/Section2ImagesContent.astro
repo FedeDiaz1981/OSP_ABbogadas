@@ -1,0 +1,89 @@
+---
+interface Props {
+  imageSrc: string;
+  imageSrc2?: string;
+  imageAlt?: string;
+  title: string;
+  text: string;
+  linkHref?: string;
+  linkText?: string;
+  reversed?: boolean;
+}
+
+const {
+  imageSrc,
+  imageSrc2,
+  imageAlt = "",
+  title,
+  text,
+  linkHref,
+  linkText,
+  reversed = false,
+} = Astro.props as Props;
+
+const sectionClasses = [
+  "section",
+  "section-image-content",
+  "section-border-bottom",
+  "py-16",
+].join(" ");
+---
+
+<section class={sectionClasses}>
+  <div class="shell">
+    <div
+      class={`section__inner flex flex-col items-center justify-center gap-10 lg:gap-12 ${
+        reversed ? "lg:flex-row-reverse" : "lg:flex-row"
+      }`}
+    >
+      {imageSrc && (
+        <div
+          class="section__image image-fit w-full lg:w-1/3 flex justify-center"
+          data-aos="fade-right"
+        >
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full max-w-sm object-cover rounded-xl"
+          />
+        </div>
+      )}
+      {imageSrc2 && (
+        <div
+          class="section__image image-fit w-full lg:w-1/3 flex justify-center"
+          data-aos="fade-left"
+        >
+          <img
+            src={imageSrc2}
+            alt={imageAlt}
+            class="w-full max-w-sm object-cover rounded-xl"
+          />
+        </div>
+      )}
+
+      <div
+        class="section__content w-full lg:w-1/3 text-center flex flex-col items-center"
+        style="padding-left: 0px;"
+        data-aos="fade-up"
+      >
+        <h3 class="text-2xl font-semibold mb-4 tracking-wide">
+          {title}
+        </h3>
+        <p class="text-base leading-relaxed mb-6 max-w-md">
+          {text}
+        </p>
+
+        {linkHref && linkText && (
+          <a
+            href={linkHref}
+            class="btn inline-block px-6 py-3 rounded-full"
+          >
+            {linkText}
+          </a>
+        )}
+      </div>
+
+      
+    </div>
+  </div>
+</section>

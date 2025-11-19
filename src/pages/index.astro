@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import SectionImageContent from "../components/SectionImageContent.astro";
+import Section2ImagesContent from "../components/Section2ImagesContent.astro";
+import CTASection from "../components/CTASection.astro";
+import NavigationOverlay from "../components/NavigationOverlay.astro";
+
+import abogada_1 from "../../public/images/Abogada_01.png"
+import abogada_2 from "../../public/images/Abogada_02.png"
+
+import servicio from "../../public/images/servicios.jpg"
+import metodo from "../../public/images/metodo.jpg"
+---
+
+<BaseLayout title="Inicio | OSP Abogados">
+  <Hero />
+
+  <SectionHeading
+    subtitle="Bienvenidas a"
+    title="OSP Abogadas"
+  />
+
+  <NavigationOverlay />
+
+  <Section2ImagesContent
+    imageSrc={abogada_1.src}
+    imageSrc2={abogada_2.src}
+    imageAlt="Equipo del estudio"
+    title="Nuestro equipo"
+    text=""
+    linkHref="/team"
+    linkText="Conocer al equipo"
+  />
+
+  <SectionImageContent
+    imageSrc={servicio.src}
+    imageAlt="Reunión con clientes"
+    title="Nuestra propuesta"
+    text=""
+    linkHref="/services"
+    linkText="Servicios"
+    reversed={true}
+  />
+
+  <SectionImageContent
+    imageSrc={metodo.src}
+    imageAlt="Confianza y trayectoria"
+    title="Cómo trabajamos contigo"
+    text=""
+    linkHref="/about"
+    linkText="Nuestro método"
+  />
+
+  <CTASection
+    title="¿Necesitás asesoramiento legal?"
+    buttonHref="/book-consultation"
+    buttonText="Reservar consulta"
+  />
+</BaseLayout>

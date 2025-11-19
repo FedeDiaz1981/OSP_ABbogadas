@@ -1,0 +1,75 @@
+
+
+
+
+
+
+
+
+.hero__title h1 {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__title h1.is-leaving {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.hero__title h1.is-entering {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ocultamos la lista de palabras, sólo se usa como fuente de texto */
+.hero__words {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+/* PANEL DE NAVEGACIÓN LATERAL */
+
+/* Overlay oscuro que cubre toda la pantalla */
+
+
+/* Cuando el menú está abierto (clase que agrega tu JS) */
+body.has-open-menu .section-navigation .section__overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Body sin scroll cuando el menú está abierto */
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+.hero__title h1 {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero__title h1.is-leaving {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.hero__title h1.is-entering {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-navigation[data-nav] {
+  /* position: fixed; */
+  inset: 0;
+  z-index: 10;            /* por encima del contenido normal */
+  /* opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s; */
+}
+
+.has-open-menu .section-navigation[data-nav] {
+  opacity: 1;
+  pointer-events: auto;
+}
+

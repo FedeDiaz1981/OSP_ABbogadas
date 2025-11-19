@@ -1,0 +1,64 @@
+---
+import NavigationOverlay from "../components/NavigationOverlay.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { title = "Estudio Jurídico" } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="icon"
+      href="https://www.stanchierifamilylaw.com/wp-content/themes/stanchieri-family-new/resources/images/favicon.ico?ver=1749460214"
+    />
+
+    <link rel="stylesheet" href="/css/theme_2.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+  </head>
+
+  <body
+    class="home wp-singular page-template page-template-templates page-template-page-builder page-template-templatespage-builder-php page page-id-6 wp-embed-responsive wp-theme-stanchieri-family-new is-loaded"
+  >
+    <div class="overlay" data-body-overlay></div>
+
+    <div class="wrapper">
+      <NavigationOverlay />
+
+      <div class="wrapper__inner">
+        <Header />
+
+        <main class="main">
+          <slot />
+        </main>
+
+        <Footer />
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" is:inline></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" is:inline></script>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.AOS) {
+          window.AOS.init({
+            duration: 600,
+            once: true,
+          });
+        }
+      });
+    </script>
+
+    <script type="module" src="/js/ui.js"></script>
+  </body>
+</html>

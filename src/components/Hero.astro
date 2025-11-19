@@ -1,0 +1,60 @@
+---
+import fondo from "../../public/images/hero_5.jpg"
+---
+<section class="mt-0">
+  <div
+    class="hero image-fit js-section-fullheight-wrapper hero--small-title-mobile relative min-h-screen"
+  >
+    <!-- Fondo -->
+    <img
+      width="1920"
+      height="1280"
+      src={fondo.src}
+      alt="Imagen principal del estudio"
+      class="absolute inset-0 w-full h-full object-cover"
+      decoding="async"
+      fetchpriority="high"
+      sizes="(max-width: 1920px) 100vw, 1920px"
+    />
+
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="shell relative z-10 w-full flex items-center min-h-screen justify-center">
+      <div
+        class="hero__inner js-section-fullheight min-h-screen flex items-center justify-center"
+      >
+        <div class="hero__content text-center">
+          <div class="hero__subtitle">
+            <h6>Somos abogadas de</h6>
+          </div>
+
+          <div class="hero__title js-title">
+            <div class="hero__words">
+              <p>Derecho Laboral</p>
+              <p>Derecho Civil</p>
+              <p>Derechos del consumidor</p>
+              <p>Amparos de Salud</p>
+              <p>Contratos</p>
+              <p>Sucesiones</p>
+              <p>Negociación</p>
+              <p>Resolución de conflictos</p>
+            </div>
+
+            <h1 style="font-size: 4rem;"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="#inicio"
+      class="btn-scroll-to-next-section js-btn-scroll-to absolute bottom-6 left-1/2 -translate-x-1/2"
+    >
+      <img
+        src="https://www.stanchierifamilylaw.com/wp-content/themes/stanchieri-family-new/resources/images/arrow-down-light.svg"
+        alt="Bajar"
+      />
+    </a>
+  </div>
+</section>

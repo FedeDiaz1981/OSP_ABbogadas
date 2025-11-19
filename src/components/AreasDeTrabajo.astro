@@ -1,0 +1,94 @@
+---
+interface AccordionItem {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  title?: string;
+  leftItems?: AccordionItem[];
+  rightItems?: AccordionItem[];
+}
+
+const {
+  title = "",
+  leftItems = [
+    {
+      title: "Atención personalizada desde el primer contacto",
+      text: "",
+    },
+    {
+      title: "Comunicación fluida: vos sabés lo que está pasando",
+      text: "",
+    },
+  ],
+  rightItems = [
+    {
+      title: "Enfoque estratégico: buscamos soluciones prácticas",
+      text: "",
+    },
+    {
+      title: "Respuesta ágil a tus consultas",
+      text: "",
+    },
+  ],
+} = Astro.props as Props;
+---
+
+<section
+  class="section-cols pb-20 section-border-bottom section-cols--small"
+>
+  <div class="shell">
+    {
+      title && (
+        <header class="section__head">
+          <h3>{title}</h3>
+        </header>
+      )
+    }
+
+    <div class="section__inner">
+      <div class="section__col" data-aos="fade-right">
+        <div class="section__body">
+          <div class="accordion accordion--v2 accordion--xsmall js-accordion">
+            {
+              leftItems.map((item) => (
+                <div class="accordion__section" style="min-height: 106px;">
+                  <div class="accordion__head">
+                    <a href="#" class="accordion__icon hidden" />
+                    <h6>{item.title}</h6>
+                  </div>
+
+                  <div class="accordion__body">
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="section__col" data-aos="fade-left">
+        <div class="section__body">
+          <div class="accordion accordion--v2 accordion--xsmall js-accordion">
+            {
+              rightItems.map((item) => (
+                <div class="accordion__section" style="min-height: 106px; ">
+                  <div class="accordion__head">
+                    <a href="#" class="accordion__icon hidden" />
+                    <h6>{item.title}</h6>
+                  </div>
+
+                  <div class="accordion__body" >
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

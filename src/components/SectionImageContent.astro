@@ -1,0 +1,51 @@
+---
+interface Props {
+  imageSrc: string;
+  imageAlt?: string;
+  title: string;
+  text: string;
+  linkHref?: string;
+  linkText?: string;
+  reversed?: boolean;
+}
+
+const {
+  imageSrc,
+  imageAlt = "",
+  title,
+  text,
+  linkHref,
+  linkText,
+  reversed = false,
+} = Astro.props as Props;
+
+const sectionClasses = [
+  "section",                         // <- clave
+  "section-image-content",
+  "section-border-bottom",
+  reversed ? "section-image-content--reversed" : "",
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<section class={sectionClasses} >
+  <div class="shell">
+    <div class="section__inner">
+      <div class="section__image image-fit" data-aos="fade-right">
+        <img src={imageSrc} alt={imageAlt} />
+      </div>
+
+      <div class="section__content" data-aos="fade-left">
+        <h3>{title}</h3>
+        <p>{text}</p>
+
+        {linkHref && linkText && (
+          <a href={linkHref} class="btn">
+            {linkText}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Hero from "../components/Hero_2.astro";
+import AreasDeTrabajo from "../components/AreasDeTrabajo.astro";
+---
+
+<BaseLayout title="El estudio | Estudio de Abogadas">
+  <Hero Title="Cómo trabajamos" Subtitle="contigo"/>
+  <SectionHeading subtitle="Nuestro" title="Método" />
+
+  <section
+    class="section section-border-bottom pb-16"
+  >
+    <div class="shell">
+      <div class="max-w-3xl mx-auto">
+        <ul class="space-y-6 text-center">
+          <li
+            class="text-lg leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <span class="font-semibold">1. Primera consulta inicial</span><br />
+            Escuchamos tu situación, analizamos tu caso y te contamos las posibilidades
+            legales.
+          </li>
+
+          <li
+            class="text-lg leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <span class="font-semibold">2. Presupuesto transparente</span><br />
+            Te informamos los costos, plazos y alternativas sin sorpresas.
+          </li>
+
+          <li
+            class="text-lg leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <span class="font-semibold">3. Acompañamiento constante</span><br />
+            A lo largo de todo el proceso, mantenemos contacto y te actualizamos.
+          </li>
+
+          <li
+            class="text-lg leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <span class="font-semibold">4. Cierre y seguimiento</span><br />
+            Finalizamos el trámite y, cuando corresponde, acompañamos en lo posterior
+            (revisiones, recursos, consultas).
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
