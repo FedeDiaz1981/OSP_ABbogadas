@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
+import logo from "../../public/images/logo-osp.png";
 const { title = "Estudio Jurídico" } = Astro.props;
 ---
 
@@ -15,7 +16,7 @@ const { title = "Estudio Jurídico" } = Astro.props;
 
     <link
       rel="icon"
-      href="https://www.stanchierifamilylaw.com/wp-content/themes/stanchieri-family-new/resources/images/favicon.ico?ver=1749460214"
+      href={logo.src}
     />
 
     <link rel="stylesheet" href="/css/theme_2.css" />

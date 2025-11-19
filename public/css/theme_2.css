@@ -3938,6 +3938,11 @@ body.admin-bar .hero {
   -o-object-fit: cover;
   object-fit: fill;
 }
+@media (max-width: 1399px) {
+  .image-fit > img {
+    object-fit: cover;
+  }
+}
 .image-fit--bottom {
   background-position: center bottom;
 }
@@ -4009,12 +4014,12 @@ body.admin-bar .hero {
     margin-top: 70px;
   }
 } */
-@media (max-width: 999px) {
+/* @media (max-width: 999px) {
   .main
     > *:first-child:not(.hero, .section-embed-widget, .section-article-single) {
     margin-top: 50px;
   }
-}
+} */
 .main > *:first-child:not(.hero) ~ *,
 .header--static + .main > * {
   z-index: 9;
@@ -4357,6 +4362,7 @@ body.error404 .main > section {
 @media (max-width: 1399px) {
   .nav {
     margin-bottom: 30px;
+    margin-top: 35%;
   }
 }
 .nav ul {
