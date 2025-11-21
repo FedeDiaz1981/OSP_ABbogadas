@@ -2,9 +2,18 @@
 const { subtitle, title } = Astro.props;
 ---
 
-<section class="section-heading" id="inicio">
+<section class="section-heading bg-osp">
   <div class="shell">
-    {subtitle && <h5 style="font-size:1.5rem; margin-bottom: 5px;">{subtitle}</h5>}
-    {title && <h2 style="font-size:2.6rem">{title}</h2>}
+    {subtitle && (
+      <h5 class="h5 text-osp-muted mb-2">
+        {subtitle}
+      </h5>
+    )}
+
+    {title && (
+      <h2 class="h2 text-osp-accent">
+        {title}
+      </h2>
+    )}
   </div>
 </section>

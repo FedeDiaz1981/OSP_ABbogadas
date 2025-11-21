@@ -20,28 +20,37 @@ const {
 } = Astro.props as Props;
 
 const sectionClasses = [
-  "section",                         // <- clave
+  "section",
   "section-image-content",
   "section-border-bottom",
-  reversed ? "section-image-content--reversed" : "",
+  reversed ? "lg:flex-row-reverse" : "",
 ]
   .filter(Boolean)
   .join(" ");
 ---
 
-<section class={sectionClasses} >
+<section class={sectionClasses}>
   <div class="shell">
-    <div class="section__inner">
-      <div class="section__image image-fit" data-aos="fade-right">
-        <img src={imageSrc} alt={imageAlt} />
+    <div
+      class="section__inner flex flex-col lg:flex-row items-center gap-10"
+    >
+      <div class="section__image image-fit lg:w-1/2" data-aos="fade-right">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          class="object-cover rounded-xl"
+        />
       </div>
 
-      <div class="section__content" data-aos="fade-left">
-        <h3>{title}</h3>
-        <p>{text}</p>
+      <div
+        class="section__content lg:w-1/2"
+        data-aos="fade-left"
+      >
+        <h3 class="h3 text-osp-accent mb-4">{title}</h3>
+        <p class="text-osp-muted mb-6 leading-relaxed">{text}</p>
 
         {linkHref && linkText && (
-          <a href={linkHref} class="btn">
+          <a href={linkHref} class="btn-osp-primary">
             {linkText}
           </a>
         )}

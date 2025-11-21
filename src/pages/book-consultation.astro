@@ -5,73 +5,78 @@ import Hero2 from "../components/Hero_2.astro";
 ---
 
 <BaseLayout title="Reservar consulta | Estudio de Abogadas">
-
-  <Hero2 Title="Agendar" Subtitle="contacto"/>
+  <Hero2 Title="Agendar" Subtitle="contacto" />
 
   <SectionHeading
     subtitle="Consultas legales"
     title="sin demora"
   />
 
-  <section class="section  section-border-bottom pb-16">
-  <div class="shell">
-    <div class="section__inner max-w-xl mx-auto text-center" data-aos="fade-up">
-      <h3 class="text-2xl font-semibold tracking-wide mb-6 hidden">
-        ¿Tenés un problema legal y no sabés qué hacer? En OPS Abogados estamos para ayudarte.
-      </h3>
-      <p class="text-sm md:text-xl text-gray-300 mb-10 leading-relaxed">
-        ¿Tenés un problema legal y no sabés qué hacer? En OPS Abogados estamos para ayudarte.
-      </p>
+  <section class="section section-border-bottom pb-16 bg-osp-soft text-osp">
+    <div class="shell">
+      <div
+        class="section__inner max-w-xl mx-auto text-center"
+        data-aos="fade-up"
+      >
+        <h3 class="text-2xl font-semibold tracking-wide mb-6 hidden">
+          ¿Tenés un problema legal y no sabés qué hacer? En OSP Abogadas estamos para ayudarte.
+        </h3>
 
-      <form class="consultation__form space-y-4 text-left">
-        <div class="grid gap-4 md:grid-cols-2">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre completo"
+        <p class="text-sm md:text-xl text-osp-muted mb-10 leading-relaxed">
+          ¿Tenés un problema legal y no sabés qué hacer? En OSP Abogadas estamos para ayudarte.
+        </p>
+
+        <form class="consultation__form space-y-4 text-left">
+          <div class="grid gap-4 md:grid-cols-2">
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              required
+              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm focus:outline-none"
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm focus:outline-none"
+            />
+
+            <input
+              type="tel"
+              name="telefono"
+              placeholder="Teléfono"
+              required
+              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm focus:outline-none"
+            />
+
+            <input
+              type="date"
+              name="fecha"
+              required
+              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm focus:outline-none"
+            />
+          </div>
+
+          <textarea
+            name="detalle"
+            placeholder="Contanos brevemente tu situación"
             required
-            class="w-full px-4 py-3 bg-transparent border border-white/15 rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-          />
+            class="w-full mt-2 px-4 py-3 bg-transparent border border-osp rounded-2xl text-sm min-h-[140px] resize-none focus:outline-none"
+          ></textarea>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            required
-            class="w-full px-4 py-3 bg-transparent border border-white/15 rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-          />
-
-          <input
-            type="tel"
-            name="telefono"
-            placeholder="Teléfono"
-            required
-            class="w-full px-4 py-3 bg-transparent border border-white/15 rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-          />
-
-          <input
-            type="date"
-            name="fecha"
-            required
-            class="w-full px-4 py-3 bg-transparent border border-white/15 rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-          />
-        </div>
-
-        <textarea
-          name="detalle"
-          placeholder="Contanos brevemente tu situación"
-          required
-          class="w-full mt-2 px-4 py-3 bg-transparent border border-white/15 rounded-2xl text-sm text-white placeholder:text-white/50 min-h-[140px] resize-none focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-        ></textarea>
-
-        <div class="mt-6 flex justify-center">
-          <button type="submit" class="btn px-8 py-3 rounded-full">
-            Solicitar turno
-          </button>
-        </div>
-      </form>
+          <div class="mt-6 flex justify-center">
+            <button
+              type="submit"
+              class="btn btn-osp-primary px-8 py-3 rounded-full"
+            >
+              Solicitar turno
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </BaseLayout>

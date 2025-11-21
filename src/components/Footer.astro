@@ -1,35 +1,53 @@
 ---
 import logo from "../../public/images/logo-osp.png"
 ---
-<footer class="footer">
+
+<footer class="footer bg-osp-soft text-osp">
   <div class="shell">
-    <div class="footer__inner">
+    <div class="footer__inner border-t border-osp pt-6 pb-4 flex items-center justify-between gap-6">
       <nav class="footer__nav">
-        <ul class="menu">
-          <li class="menu-item"><a href="/services">Servicios</a></li>
-          <li class="menu-item"><a href="/team">Equipo</a></li>
+        <ul class="menu flex gap-4">
+          <li class="menu-item">
+            <a href="/services" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
+              Servicios
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/team" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
+              Equipo
+            </a>
+          </li>
         </ul>
       </nav>
 
-      <a href="/" class="footer__logo">
+      <a href="/" class="footer__logo flex items-center justify-center">
         <img
           src={logo.src}
           alt="OSP Abogadas"
+          loading="lazy"
         />
       </a>
 
       <nav class="footer__nav">
-        <ul class="menu">
-          <li class="menu-item"><a href="/about">Método</a></li>
-          <li class="menu-item"><a href="/contact">Contacto</a></li>
+        <ul class="menu flex gap-4">
+          <li class="menu-item">
+            <a href="/about" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
+              Método
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/contact" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
+              Contacto
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
 
-    <div class="footer__bar">
+    <div class="footer__bar text-osp-muted text-sm mt-4">
       <p>
-        <!-- <a class="hidden" href="/legal">Aviso legal</a>-->
-      </p> 
+        <!-- <a class="hidden" href="/legal">Aviso legal</a> -->
+      </p>
     </div>
   </div>
 </footer>

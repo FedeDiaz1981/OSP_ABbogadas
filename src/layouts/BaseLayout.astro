@@ -19,8 +19,13 @@ const { title = "Estudio Jurídico" } = Astro.props;
       href={logo.src}
     />
 
+    <!-- CSS del theme original -->
     <link rel="stylesheet" href="/css/theme_2.css" />
 
+    <!-- Tema OSP (colores y helpers) -->
+    <link rel="stylesheet" href="/css/osp-theme.css" />
+
+    <!-- AOS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/aos@2.3.4/dist/aos.css"
@@ -32,7 +37,7 @@ const { title = "Estudio Jurídico" } = Astro.props;
   >
     <div class="overlay" data-body-overlay></div>
 
-    <div class="wrapper">
+    <div class="wrapper bg-osp text-osp">
       <NavigationOverlay />
 
       <div class="wrapper__inner">

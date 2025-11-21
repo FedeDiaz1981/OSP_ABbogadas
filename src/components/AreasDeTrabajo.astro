@@ -36,13 +36,13 @@ const {
 ---
 
 <section
-  class="section-cols pb-20 section-border-bottom section-cols--small"
+  class="section-cols pb-20 section-border-bottom section-cols--small bg-osp-soft text-osp"
 >
   <div class="shell">
     {
       title && (
         <header class="section__head">
-          <h3>{title}</h3>
+          <h3 class="text-osp-accent">{title}</h3>
         </header>
       )
     }
@@ -56,11 +56,11 @@ const {
                 <div class="accordion__section" style="min-height: 106px;">
                   <div class="accordion__head">
                     <a href="#" class="accordion__icon hidden" />
-                    <h6>{item.title}</h6>
+                    <h6 class="text-osp">{item.title}</h6>
                   </div>
 
                   <div class="accordion__body">
-                    <p>{item.text}</p>
+                    <p class="text-osp-muted">{item.text}</p>
                   </div>
                 </div>
               ))
@@ -74,14 +74,14 @@ const {
           <div class="accordion accordion--v2 accordion--xsmall js-accordion">
             {
               rightItems.map((item) => (
-                <div class="accordion__section" style="min-height: 106px; ">
+                <div class="accordion__section" style="min-height: 106px;">
                   <div class="accordion__head">
                     <a href="#" class="accordion__icon hidden" />
-                    <h6>{item.title}</h6>
+                    <h6 class="text-osp">{item.title}</h6>
                   </div>
 
-                  <div class="accordion__body" >
-                    <p>{item.text}</p>
+                  <div class="accordion__body">
+                    <p class="text-osp-muted">{item.text}</p>
                   </div>
                 </div>
               ))

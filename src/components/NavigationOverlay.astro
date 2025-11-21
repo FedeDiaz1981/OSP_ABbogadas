@@ -1,8 +1,8 @@
 <section class="section-navigation" data-nav>
   <div class="section__overlay" data-nav-overlay></div>
+
   <div
-    class="section__inner flex flex-col items-end min-h-screen px-6 pt-10 pb-8"
-    style="background-color:#0d0d0d;"
+    class="section__inner flex flex-col items-end min-h-screen px-6 pt-10 pb-8 bg-osp"
   >
     <!-- Cerrar -->
     <div class="menu-close mb-6" data-menu-close>
@@ -12,13 +12,14 @@
         class="w-6 h-6 cursor-pointer invert"
       />
     </div>
+
     <!-- Menú -->
     <nav class="nav w-full">
       <ul class="menu flex flex-col items-end text-right space-y-3">
         <li class="menu-item">
           <a
             href="/services"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+            class="text-osp hover:text-osp-accent transition-colors duration-200"
           >
             Servicios
           </a>
@@ -26,7 +27,7 @@
         <li class="menu-item">
           <a
             href="/team"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+            class="text-osp hover:text-osp-accent transition-colors duration-200"
           >
             Equipo
           </a>
@@ -34,7 +35,7 @@
         <li class="menu-item">
           <a
             href="/about"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+            class="text-osp hover:text-osp-accent transition-colors duration-200"
           >
             Método
           </a>
@@ -42,14 +43,20 @@
         <li class="menu-item">
           <a
             href="/contact"
-            class="text-[#f0f0f0] hover:text-[#d4b35a] transition-colors duration-200"
+            class="text-osp hover:text-osp-accent transition-colors duration-200"
           >
             Contacto
           </a>
         </li>
       </ul>
     </nav>
+
     <!-- Botón -->
-    <a href="/book-consultation" class="btn  md:mt-auto"> Reservar consulta </a>
+    <a
+      href="/book-consultation"
+      class="btn btn-osp-primary md:mt-auto"
+    >
+      Reservar consulta
+    </a>
   </div>
 </section>

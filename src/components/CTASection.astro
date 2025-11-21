@@ -8,13 +8,15 @@ interface Props {
 const { title, buttonHref, buttonText } = Astro.props as Props;
 ---
 
-<section class="section-cta">
+<section class="section-cta bg-osp-soft text-osp">
   <div class="shell">
-    <div class="section__inner">
-      <h4>{title}</h4>
+    <div class="section__inner flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+      <h4 class="text-osp-accent">
+        {title}
+      </h4>
 
       <div class="section__actions">
-        <a href={buttonHref} class="btn">
+        <a href={buttonHref} class="btn btn-osp-primary">
           {buttonText}
         </a>
       </div>

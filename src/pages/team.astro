@@ -2,65 +2,74 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import Hero from "../components/Hero_2.astro";
-import Abogada_1 from "../../public/images/Abogada_01.png"
-import Abogada_2 from "../../public/images/Abogada_02.png"
+import Abogada_1 from "../../public/images/Abogada_01.png";
+import Abogada_2 from "../../public/images/Abogada_02.png";
 ---
 
-<BaseLayout title="Equipo | Estudio de Abogadas">
-  <Hero Title="nuestro" Subtitle="equipo"/>
+<BaseLayout title="Equipo | OSP Abogadas">
+  <Hero Title="nuestro" Subtitle="equipo" />
+
   <SectionHeading
     subtitle="Nuestro equipo"
     title="Abogadas"
   />
 
-  <section class="section  section-border-bottom pb-16">
-  <div class="shell">
-    <header class="section__head text-center mb-10" data-aos="fade-up">
-      <h3 class="text-2xl font-semibold tracking-wide">Nuestro equipo</h3>
-    </header>
-
-    <div
-      class="section__inner team__grid grid gap-10 md:grid-cols-2 max-w-4xl mx-auto"
-    >
-      <article
-        class="team-card bg-white/5 rounded-3xl px-8 py-10 text-center flex flex-col items-center"
-        data-aos="fade-right"
+  <section class="section section-border-bottom pb-16 bg-osp-soft text-osp">
+    <div class="shell">
+      <header
+        class="section__head text-center mb-10"
+        data-aos="fade-up"
       >
-        <div class="w-[11rem] h-[18rem] mb-6 rounded-full overflow-hidden">
-          <img
-            src={Abogada_1.src}
-            alt="Dominique Olivier"
-            class="w-full h-full object-cover"
-          />
-        </div>
+        <h3 class="h3 text-osp-accent">
+          Nuestro equipo
+        </h3>
+      </header>
 
-        <h3 class="text-xl font-semibold mb-3">Dominique Olivier</h3>
-        <p class="text-sm leading-relaxed text-white/80">
-          Abogada en Derecho del Consumidor, Contratos y Sucesiones.<br />
-          Siempre al lado del cliente para escuchar, estudiar y proponer la mejor estrategia.
-        </p>
-      </article>
-
-      <article
-        class="team-card bg-white/5 rounded-3xl px-8 py-10 text-center flex flex-col items-center"
-        data-aos="fade-left"
+      <div
+        class="section__inner team__grid grid gap-10 md:grid-cols-2 max-w-4xl mx-auto"
       >
-        <div class="w-[11rem] h-[18rem] mb-6 rounded-full overflow-hidden">
-          <img
-            src={Abogada_2.src}
-            alt="Lucila Stroppiana"
-            class="w-full h-full object-cover"
-          />
-        </div>
+        <article
+          class="team-card rounded-3xl px-8 py-10 text-center flex flex-col items-center bg-osp border border-osp"
+          data-aos="fade-right"
+        >
+          <div class="w-[11rem] h-[18rem] mb-6 rounded-full overflow-hidden">
+            <img
+              src={Abogada_1.src}
+              alt="Dominique Olivier"
+              class="w-full h-full object-cover"
+            />
+          </div>
 
-        <h3 class="text-xl font-semibold mb-3">Lucila Stroppiana</h3>
-        <p class="text-sm leading-relaxed text-white/80">
-          Abogada especialista en Derecho Civil y Amparos de Salud, Derecho Laboral.<br />
-          Defiende tus derechos con firmeza y sensibilidad.
-        </p>
-      </article>
+          <h3 class="text-xl font-semibold mb-3 text-osp">
+            Dominique Olivier
+          </h3>
+          <p class="text-sm leading-relaxed text-osp-muted">
+            Abogada en Derecho del Consumidor, Contratos y Sucesiones.<br />
+            Siempre al lado del cliente para escuchar, estudiar y proponer la mejor estrategia.
+          </p>
+        </article>
+
+        <article
+          class="team-card rounded-3xl px-8 py-10 text-center flex flex-col items-center bg-osp border border-osp"
+          data-aos="fade-left"
+        >
+          <div class="w-[11rem] h-[18rem] mb-6 rounded-full overflow-hidden">
+            <img
+              src={Abogada_2.src}
+              alt="Lucila Stroppiana"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <h3 class="text-xl font-semibold mb-3 text-osp">
+            Lucila Stroppiana
+          </h3>
+          <p class="text-sm leading-relaxed text-osp-muted">
+            Abogada especialista en Derecho Civil y Amparos de Salud, Derecho Laboral.<br />
+            Defiende tus derechos con firmeza y sensibilidad.
+          </p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </BaseLayout>

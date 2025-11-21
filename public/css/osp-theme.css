@@ -1,0 +1,161 @@
+/* ================================
+   OSP – Tema general
+   Se carga DESPUÉS de theme_2.css
+   ================================ */
+
+/* ---------- Tokens de color ---------- */
+
+:root {
+  /* Colores principales */
+  --osp-bg: #0d0d0d;
+  --osp-bg-soft: #111111;
+  --osp-text: #f5f5f5;
+  --osp-text-muted: #cfcfcf;
+
+  /* Acento dorado inspirado en el logo */
+  --osp-accent: #d4b35a;
+  --osp-accent-hover: #b99642;
+
+  /* Fondos claros para secciones */
+  --osp-light-bg: #efece8;
+
+  /* Bordes suaves */
+  --osp-border-soft: rgba(212, 179, 90, 0.35);
+}
+
+/* ---------- Fondo global y texto base ---------- */
+
+body {
+  background-color: var(--osp-bg);
+  color: var(--osp-text);
+}
+
+/* ---------- Selección de texto ---------- */
+
+::selection {
+  color: #000;
+  background: var(--osp-accent);
+}
+
+::-moz-selection {
+  color: #000;
+  background: var(--osp-accent);
+}
+
+/* ---------- Títulos ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Colores de texto helpers ---------- */
+
+.text-osp {
+  color: var(--osp-text);
+}
+
+.text-osp-muted {
+  color: var(--osp-text-muted);
+}
+
+.text-osp-accent {
+  color: var(--osp-accent);
+}
+
+/* ---------- Fondos helpers ---------- */
+
+.bg-osp {
+  background-color: var(--osp-bg);
+}
+
+.bg-osp-soft {
+  background-color: var(--osp-bg-soft);
+}
+
+.bg-osp-light {
+  background-color: var(--osp-light-bg);
+}
+
+.bg-osp-accent {
+  background-color: var(--osp-accent);
+}
+
+/* ---------- Bordes helpers ---------- */
+
+.border-osp {
+  border-color: var(--osp-border-soft);
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--osp-text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--osp-accent);
+}
+
+/* ---------- Botones genéricos ---------- */
+
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  background-color: var(--osp-accent);
+  color: #000;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: var(--osp-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active,
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: translateY(0);
+}
+
+/* ---------- Botón primario OSP específico ---------- */
+
+.btn-osp-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: var(--osp-accent);
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-osp-primary:hover {
+  background-color: var(--osp-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-osp-primary:active {
+  transform: translateY(0);
+}

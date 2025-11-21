@@ -2,7 +2,7 @@
 // src/components/Header.astro
 ---
 
-<header class="header">
+<header class="header bg-osp-soft border-b border-osp">
   <div class="header__inner">
     <a href="/" class="logo">
       <img
@@ -12,10 +12,15 @@
       />
     </a>
 
-    <div class="menu-toggle" data-menu-toggle>
+    <button
+      class="menu-toggle"
+      type="button"
+      data-menu-toggle
+      aria-label="Abrir menú de navegación"
+    >
       <span class="menu__box">
         <span class="menu__inner"></span>
       </span>
-    </div>
+    </button>
   </div>
 </header>
