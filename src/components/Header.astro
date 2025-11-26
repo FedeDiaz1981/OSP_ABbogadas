@@ -2,18 +2,59 @@
 // src/components/Header.astro
 ---
 
-<header class="header bg-osp-soft border-b border-osp">
-  <div class="header__inner">
+<header
+  class="header bg-osp-soft/80 border-b border-osp shadow-sm backdrop-blur-sm"
+>
+  <div class="header__inner relative flex items-center justify-between">
     <a href="/" class="logo">
       <img
         src="/images/logo-osp.png"
         alt="OSP Abogadas"
         loading="lazy"
+        class="max-h-25 w-auto"
       />
     </a>
 
+    {/* NAV DESKTOP CENTRADO */}
+    <nav
+      class="header__nav hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2"
+    >
+      <a
+        href="/team"
+        class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
+      >
+        Nuestro equipo
+      </a>
+      <a
+        href="/services"
+        class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
+      >
+        Nuestros servicios
+      </a>
+      <a
+        href="/about"
+        class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
+      >
+        Nuestro método
+      </a>
+      <a
+        href="/contact"
+        class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
+      >
+        Contacto
+      </a>
+
+      <a
+        href="/contact"
+        class="inline-flex items-center px-5 py-2 rounded-full border border-osp-accent bg-osp-accent text-[0.7rem] font-semibold tracking-[0.24em] uppercase text-white hover:bg-osp-accent-hover hover:-translate-y-[1px] transition transform shadow-md hover:shadow-lg"
+      >
+        Reservar consulta
+      </a>
+    </nav>
+
+    {/* TOGGLE SOLO MOBILE */}
     <button
-      class="menu-toggle"
+      class="menu-toggle md:hidden"
       type="button"
       data-menu-toggle
       aria-label="Abrir menú de navegación"

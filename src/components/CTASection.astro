@@ -6,19 +6,33 @@ interface Props {
 }
 
 const { title, buttonHref, buttonText } = Astro.props as Props;
+
+const [firstWord, ...rest] = title.split(" ");
+const remaining = rest.join(" ");
 ---
 
-<section class="section-cta bg-osp-soft text-osp">
+<section class="section-cta section-cta--osp">
   <div class="shell">
-    <div class="section__inner flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
-      <h4 class="text-osp-accent">
-        {title}
-      </h4>
+    <div class="section-cta__card">
+      <div class="section-cta__inner">
+        <h4 class="section-cta__title">
+          <span class="section-cta__word section-cta__word--light">
+            {firstWord}
+          </span>
+          {remaining && (
+            <span class="section-cta__word section-cta__word--accent">
+              {" "}{remaining}
+            </span>
+          )}
+        </h4>
 
-      <div class="section__actions">
-        <a href={buttonHref} class="btn btn-osp-primary">
-          {buttonText}
-        </a>
+        <div class="section-cta__actions">
+          <div class="section-cta__button-shell">
+            <a href={buttonHref} class="btn-osp-primary section-cta__button">
+              {buttonText}
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

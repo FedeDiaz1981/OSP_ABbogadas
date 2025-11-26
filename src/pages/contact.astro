@@ -4,7 +4,7 @@ import SectionHeading from "../components/SectionHeading.astro";
 import Hero2 from "../components/Hero_2.astro";
 ---
 
-<BaseLayout title="Reservar consulta | Estudio de Abogadas">
+<BaseLayout title="Reservar consulta | OSP Abogadas">
   <Hero2 Title="Agendar" Subtitle="contacto" />
 
   <SectionHeading
@@ -12,65 +12,80 @@ import Hero2 from "../components/Hero_2.astro";
     title="sin demora"
   />
 
-  <section class="section section-border-bottom pb-16 bg-osp-soft text-osp">
-    <div class="shell">
-      <div class="section__inner max-w-xl mx-auto text-center" data-aos="fade-up">
-        <h3 class="text-2xl font-semibold tracking-wide mb-6 hidden">
-          ¿Tenés un problema legal y no sabés qué hacer? En OSP Abogadas estamos para ayudarte.
-        </h3>
-
-        <p class="text-sm md:text-xl text-osp-muted mb-10 leading-relaxed">
-          ¿Tenés un problema legal y no sabés qué hacer? En OSP Abogadas estamos para ayudarte.
+  <section class="section section-border-bottom section-consult bg-osp-soft text-osp">
+  <div class="shell">
+    <div
+      class="consult-card"
+      data-aos="fade-up"
+    >
+      <header class="consult-card__head">
+        <p class="consult-card__eyebrow">
+          Consultas legales
         </p>
 
-        <form class="consultation__form space-y-4 text-left">
-          <div class="grid gap-4 md:grid-cols-2">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre completo"
-              required
-              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-            />
+        <h3 class="consult-card__title">
+          SIN DEMORA
+        </h3>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              required
-              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-            />
+        <span class="consult-card__underline"></span>
 
-            <input
-              type="tel"
-              name="telefono"
-              placeholder="Teléfono"
-              required
-              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-            />
+        <p class="consult-card__text">
+          ¿Tenés un problema legal y no sabés qué hacer? En OSP Abogados estamos para ayudarte.
+        </p>
+      </header>
 
-            <input
-              type="date"
-              name="fecha"
-              required
-              class="w-full px-4 py-3 bg-transparent border border-osp rounded-full text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-            />
-          </div>
-
-          <textarea
-            name="detalle"
-            placeholder="Contanos brevemente tu situación"
+      <form class="consultation__form space-y-4 text-left">
+        <div class="grid gap-4 md:grid-cols-2">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre completo"
             required
-            class="w-full mt-2 px-4 py-3 bg-transparent border border-osp rounded-2xl text-sm text-white placeholder:text-white/50 min-h-[140px] resize-none focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40"
-          ></textarea>
+            class="consultation__field"
+          />
 
-          <div class="mt-6 flex justify-center">
-            <button type="submit" class="btn btn-osp-primary px-8 py-3 rounded-full">
-              Solicitar turno
-            </button>
-          </div>
-        </form>
-      </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+            class="consultation__field"
+          />
+
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Teléfono"
+            required
+            class="consultation__field"
+          />
+
+          <input
+            type="date"
+            name="fecha"
+            required
+            class="consultation__field consultation__field--date"
+          />
+        </div>
+
+        <textarea
+          name="detalle"
+          placeholder="Contanos brevemente tu situación"
+          required
+          class="consultation__field consultation__field--textarea"
+        ></textarea>
+
+        <div class="mt-6 flex justify-center">
+          <button
+            type="submit"
+            class="btn btn-osp-primary consultation__submit"
+          >
+            Solicitar turno
+          </button>
+        </div>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
+
 </BaseLayout>

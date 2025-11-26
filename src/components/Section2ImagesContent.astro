@@ -14,8 +14,8 @@ const {
   imageSrc,
   imageSrc2,
   imageAlt = "",
-  title,
-  text,
+  title,      // ya no se usa, pero lo dejo por si lo necesitás en otro lado
+  text,       // idem
   linkHref,
   linkText,
   reversed = false,
@@ -25,65 +25,68 @@ const sectionClasses = [
   "section",
   "section-image-content",
   "section-border-bottom",
-  "py-16",
-  "bg-osp-soft",
-  "text-osp",
-].join(" ");
+  "section-image-content--osp",
+  "section-image-content--with-card",
+  reversed ? "section-image-content--reversed" : "",
+]
+  .filter(Boolean)
+  .join(" ");
 ---
 
 <section class={sectionClasses}>
   <div class="shell">
     <div
-      class={`section__inner flex flex-col items-center justify-center gap-10 lg:gap-12 ${
-        reversed ? "lg:flex-row-reverse" : "lg:flex-row"
-      }`}
+      class="section__inner section-image-content__inner"
+      data-aos="fade-up"
+      style="padding-top: 0px;"
     >
-      {imageSrc && (
-        <div
-          class="section__image image-fit w-full lg:w-1/3 flex justify-center"
-          data-aos="fade-right"
-        >
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            class="w-full max-w-sm object-cover rounded-xl"
-          />
-        </div>
-      )}
-
-      {imageSrc2 && (
-        <div
-          class="section__image image-fit w-full lg:w-1/3 flex justify-center"
-          data-aos="fade-left"
-        >
-          <img
-            src={imageSrc2}
-            alt={imageAlt}
-            class="w-full max-w-sm object-cover rounded-xl"
-          />
-        </div>
-      )}
-
-      <div
-        class="section__content w-full lg:w-1/3 text-center flex flex-col items-center"
-        data-aos="fade-up"
-      >
-        <h3 class="h3 text-osp-accent mb-4 tracking-wide">
-          {title}
-        </h3>
-
-        <p class="text-base leading-relaxed mb-6 max-w-md text-osp-muted">
-          {text}
-        </p>
-
-        {linkHref && linkText && (
-          <a
-            href={linkHref}
-            class="btn btn-osp-primary inline-block"
+      {/* FILA SUPERIOR: 2 FOTOS */}
+      <div class="section-image-content__media section-image-content__media--osp">
+        {imageSrc && (
+          <div
+            class="section__image section-image-content__image section-image-content__image--primary section-image-content__image--osp"
+            data-aos="fade-right"
+            style="padding-bottom: 0px;"
           >
-            {linkText}
-          </a>
+            <div class="section-image-content__image-wrapper">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                class="section-image-content__image-el"
+              />
+            </div>
+          </div>
         )}
+
+        {imageSrc2 && (
+          <div
+            class="section__image section-image-content__image section-image-content__image--secondary section-image-content__image--osp"
+            data-aos="fade-left"
+            style="padding-bottom: 0px;"
+          >
+            <div class="section-image-content__image-wrapper">
+              <img
+                src={imageSrc2}
+                alt={imageAlt}
+                class="section-image-content__image-el"
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* FILA INFERIOR: SOLO BOTÓN */}
+      <div class="section__content section-image-content__content" style="padding-left: 0px;">
+        <div class="section-image-content__card section-image-content__card--osp section-image-content__card--only-btn">
+          {linkHref && linkText && (
+            <a
+              href={linkHref}
+              class="btn btn-osp-primary section-image-content__link section-image-content__link--osp"
+            >
+              {linkText}
+            </a>
+          )}
+        </div>
       </div>
     </div>
   </div>

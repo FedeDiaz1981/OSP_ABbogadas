@@ -1,53 +1,59 @@
 ---
-import logo from "../../public/images/logo-osp.png"
+import logo from "../../public/images/logo-osp.png";
 ---
 
 <footer class="footer bg-osp-soft text-osp">
   <div class="shell">
-    <div class="footer__inner border-t border-osp pt-6 pb-4 flex items-center justify-between gap-6">
-      <nav class="footer__nav">
-        <ul class="menu flex gap-4">
-          <li class="menu-item">
-            <a href="/services" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
-              Servicios
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="/team" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
-              Equipo
-            </a>
-          </li>
-        </ul>
-      </nav>
+    {/* CARD OSCURA */}
+    <div class="footer__card">
+      <div
+        class="footer__inner flex items-center justify-between gap-8"
+      >
+        <nav class="footer__nav footer__nav--left">
+          <ul class="menu flex gap-6">
+            <li class="menu-item">
+              <a href="/team" class="footer__link">
+                Nuestro Equipo
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="/services" class="footer__link">
+                Nuestros Servicios
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <a href="/" class="footer__logo flex items-center justify-center">
-        <img
-          src={logo.src}
-          alt="OSP Abogadas"
-          loading="lazy"
-        />
-      </a>
+        <a href="/" class="footer__logo flex items-center justify-center">
+          <div class="footer__logo-pill">
+            <img
+              src={logo.src}
+              alt="OSP Abogadas"
+              loading="lazy"
+              class="footer__logo-img"
+            />
+          </div>
+        </a>
 
-      <nav class="footer__nav">
-        <ul class="menu flex gap-4">
-          <li class="menu-item">
-            <a href="/about" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
-              Método
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="/contact" class="text-osp-muted hover:text-osp-accent transition-colors duration-200">
-              Contacto
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="footer__nav footer__nav--right">
+          <ul class="menu flex gap-6">
+            <li class="menu-item">
+              <a href="/about" class="footer__link">
+                Nuestro Método
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="/contact" class="footer__link">
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
-    <div class="footer__bar text-osp-muted text-sm mt-4">
-      <p>
-        <!-- <a class="hidden" href="/legal">Aviso legal</a> -->
-      </p>
+    <div class="footer__bar text-osp-muted text-xs mt-5 text-center">
+      <p>© OSP Abogados · Todos los derechos reservados</p>
     </div>
   </div>
 </footer>

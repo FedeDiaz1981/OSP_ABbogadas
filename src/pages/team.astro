@@ -14,62 +14,89 @@ import Abogada_2 from "../../public/images/Abogada_02.png";
     title="Abogadas"
   />
 
-  <section class="section section-border-bottom pb-16 bg-osp-soft text-osp">
+    <section class="section section-border-bottom pb-16 bg-osp-soft text-osp osp-team-section">
     <div class="shell">
       <header
         class="section__head text-center mb-10"
         data-aos="fade-up"
       >
-        <h3 class="h3 text-osp-accent">
+        <h3 class="h3 text-osp-accent hidden">
           Nuestro equipo
         </h3>
       </header>
 
       <div
-        class="section__inner team__grid grid gap-10 md:grid-cols-2 max-w-4xl mx-auto"
+        class="section__inner team__grid grid gap-10 md:grid-cols-2 max-w-5xl mx-auto"
       >
+        {/* DOMINIQUE */}
         <article
-          class="team-card rounded-3xl px-8 py-10 text-center flex flex-col items-center bg-osp border border-osp"
+          class="osp-team-card"
           data-aos="fade-right"
         >
-          <div class="w-[11rem] h-[18rem] mb-6 rounded-full overflow-hidden">
-            <img
-              src={Abogada_1.src}
-              alt="Dominique Olivier"
-              class="w-full h-full object-cover"
-            />
+          {/* CONTENEDOR 1: FOTO + NOMBRE + ROL */}
+          <div class="osp-team-panel osp-team-panel--top">
+            <div class="osp-team-photo-wrapper">
+              <img
+                src={Abogada_1.src}
+                alt="Dominique Olivier"
+                class="osp-team-photo"
+              />
+            </div>
+
+            <div class="osp-team-info">
+              <h3 class="osp-team-name">
+                Dominique Olivier
+              </h3>
+              <p class="osp-team-role">Abogada</p>
+            </div>
           </div>
 
-          <h3 class="text-xl font-semibold mb-3 text-osp">
-            Dominique Olivier
-          </h3>
-          <p class="text-sm leading-relaxed text-osp-muted">
-            Abogada en Derecho del Consumidor, Contratos y Sucesiones.<br />
-            Siempre al lado del cliente para escuchar, estudiar y proponer la mejor estrategia.
-          </p>
+          {/* CONTENEDOR 2: ÁREAS + FRASE */}
+          <div class="osp-team-panel osp-team-panel--bottom">
+            <p class="osp-team-areas">
+              Derecho del consumidor · Contratos · Sucesiones
+            </p>
+            <p class="osp-team-phrase">
+              Siempre al lado del cliente para escuchar, estudiar y proponer la mejor estrategia.
+            </p>
+          </div>
         </article>
 
+        {/* LUCILA */}
         <article
-          class="team-card rounded-3xl px-8 py-10 text-center flex flex-col items-center bg-osp border border-osp"
+          class="osp-team-card"
           data-aos="fade-left"
         >
-          <div class="w-[11rem] h-[18rem] mb-6 rounded-full overflow-hidden">
-            <img
-              src={Abogada_2.src}
-              alt="Lucila Stroppiana"
-              class="w-full h-full object-cover"
-            />
+          {/* CONTENEDOR 1: FOTO + NOMBRE + ROL */}
+          <div class="osp-team-panel osp-team-panel--top">
+            <div class="osp-team-photo-wrapper">
+              <img
+                src={Abogada_2.src}
+                alt="Lucila Stroppiana"
+                class="osp-team-photo"
+              />
+            </div>
+
+            <div class="osp-team-info">
+              <h3 class="osp-team-name">
+                Lucila Stroppiana
+              </h3>
+              <p class="osp-team-role">Abogada</p>
+            </div>
           </div>
 
-          <h3 class="text-xl font-semibold mb-3 text-osp">
-            Lucila Stroppiana
-          </h3>
-          <p class="text-sm leading-relaxed text-osp-muted">
-            Abogada especialista en Derecho Civil y Amparos de Salud, Derecho Laboral.<br />
-            Defiende tus derechos con firmeza y sensibilidad.
-          </p>
+          {/* CONTENEDOR 2: ÁREAS + FRASE */}
+          <div class="osp-team-panel osp-team-panel--bottom">
+            <p class="osp-team-areas">
+              Derecho civil · Derecho laboral · Amparos de salud
+            </p>
+            <p class="osp-team-phrase">
+              Defiende tus derechos con firmeza y sensibilidad.
+            </p>
+          </div>
         </article>
       </div>
     </div>
   </section>
+
 </BaseLayout>

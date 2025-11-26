@@ -1,94 +1,142 @@
 ---
-interface AccordionItem {
+interface ServiceItem {
   title: string;
-  text: string;
+  description?: string;
 }
 
 interface Props {
   title?: string;
-  leftItems?: AccordionItem[];
-  rightItems?: AccordionItem[];
+  services?: ServiceItem[];
 }
 
 const {
-  title = "",
-  leftItems = [
-    {
-      title: "Atención personalizada desde el primer contacto",
-      text: "",
-    },
-    {
-      title: "Comunicación fluida: vos sabés lo que está pasando",
-      text: "",
-    },
-  ],
-  rightItems = [
-    {
-      title: "Enfoque estratégico: buscamos soluciones prácticas",
-      text: "",
-    },
-    {
-      title: "Respuesta ágil a tus consultas",
-      text: "",
-    },
+  title = "Nuestros servicios",
+  services = [
+    { title: "Asesoría legal" },
+    { title: "Derecho laboral" },
+    { title: "Contratos" },
+    { title: "Registro de marca" },
+    { title: "Estafas" },
+    { title: "Sucesiones" },
+    { title: "Alquileres" },
   ],
 } = Astro.props as Props;
+
+const words = title.toUpperCase().split(" ");
+const midIndex = Math.ceil(words.length / 2);
+const firstLine = words.slice(0, midIndex).join(" ");
+const secondLine = words.slice(midIndex).join(" ");
 ---
 
-<section
-  class="section-cols pb-20 section-border-bottom section-cols--small bg-osp-soft text-osp"
->
+<section class="section-areas bg-osp-soft text-osp">
   <div class="shell">
-    {
-      title && (
-        <header class="section__head">
-          <h3 class="text-osp-accent">{title}</h3>
-        </header>
-      )
-    }
+    <div class="osp-areas-card" data-aos="fade-up">
+      {
+        title && (
+          <header class="osp-areas-head">
+            <h3 class="osp-areas-title">
+              <span class="osp-areas-title-line osp-areas-title-line--light hidden">
+                {firstLine}
+              </span>
 
-    <div class="section__inner">
-      <div class="section__col" data-aos="fade-right">
-        <div class="section__body">
-          <div class="accordion accordion--v2 accordion--xsmall js-accordion">
-            {
-              leftItems.map((item) => (
-                <div class="accordion__section" style="min-height: 106px;">
-                  <div class="accordion__head">
-                    <a href="#" class="accordion__icon hidden" />
-                    <h6 class="text-osp">{item.title}</h6>
-                  </div>
+              {secondLine && (
+                <span class="osp-areas-title-line osp-areas-title-line--accent hidden">
+                  {secondLine}
+                </span>
+              )}
+            </h3>
+            <span class="osp-areas-underline hidden" />
+          </header>
+        )
+      }
 
-                  <div class="accordion__body">
-                    <p class="text-osp-muted">{item.text}</p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-
-      <div class="section__col" data-aos="fade-left">
-        <div class="section__body">
-          <div class="accordion accordion--v2 accordion--xsmall js-accordion">
-            {
-              rightItems.map((item) => (
-                <div class="accordion__section" style="min-height: 106px;">
-                  <div class="accordion__head">
-                    <a href="#" class="accordion__icon hidden" />
-                    <h6 class="text-osp">{item.title}</h6>
-                  </div>
-
-                  <div class="accordion__body">
-                    <p class="text-osp-muted">{item.text}</p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
+      <div class="osp-areas-list">
+        {
+          services.map((item, index) => (
+            <button
+              type="button"
+              class="osp-areas-pill"
+              data-service-pill
+              data-service-title={item.title}
+              data-service-desc={
+                item.description ??
+                `Te asesoramos en todo lo relacionado con ${item.title.toLowerCase()}. Analizamos tu caso, explicamos tus opciones con lenguaje claro y definimos un plan de acción concreto para avanzar con seguridad.`
+              }
+            >
+              <span class="osp-areas-pill-text">{item.title}</span>
+            </button>
+          ))
+        }
       </div>
     </div>
   </div>
+
+  {/* MODAL DETALLE SERVICIO */}
+  <div id="osp-service-modal" class="osp-modal" aria-hidden="true">
+    <div class="osp-modal__backdrop"></div>
+
+    <div class="osp-modal__dialog" role="dialog" aria-modal="true">
+      <button type="button" class="osp-modal__close" aria-label="Cerrar">
+        ×
+      </button>
+
+      <h4 class="osp-modal__title"></h4>
+      <p class="osp-modal__text"></p>
+    </div>
+  </div>
+
+  <script>
+    if (typeof window !== "undefined") {
+      window.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById(
+          "osp-service-modal"
+        ) as HTMLElement | null;
+        if (!modal) return;
+
+        const titleEl = modal.querySelector(
+          ".osp-modal__title"
+        ) as HTMLElement | null;
+        const textEl = modal.querySelector(
+          ".osp-modal__text"
+        ) as HTMLElement | null;
+        const closeBtn = modal.querySelector(
+          ".osp-modal__close"
+        ) as HTMLButtonElement | null;
+        const backdrop = modal.querySelector(
+          ".osp-modal__backdrop"
+        ) as HTMLElement | null;
+
+        if (!titleEl || !textEl || !closeBtn || !backdrop) return;
+
+        const openModal = (title: string, text: string) => {
+          titleEl.textContent = title;
+          textEl.textContent = text;
+          modal.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+        };
+
+        const closeModal = () => {
+          modal.classList.remove("is-open");
+          document.body.style.overflow = "";
+        };
+
+        closeBtn.addEventListener("click", closeModal);
+        backdrop.addEventListener("click", closeModal);
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") closeModal();
+        });
+
+        document.querySelectorAll("[data-service-pill]").forEach((el) => {
+          const btn = el as HTMLButtonElement;
+
+          btn.addEventListener("click", () => {
+            const title = btn.dataset.serviceTitle || "";
+            const desc = btn.dataset.serviceDesc || "";
+            openModal(title, desc);
+          });
+        });
+      });
+    }
+  </script>
 </section>

@@ -12,9 +12,9 @@ const {
 import fondo from "../../public/images/hero_5.jpg";
 ---
 
-<section class="mt-0 bg-osp">
+<section class="mt-0">
   <div
-    class="hero image-fit js-section-fullheight-wrapper hero--small-title-mobile relative min-h-screen"
+    class="hero image-fit js-section-fullheight-wrapper hero--small-title-mobile relative max-h-[85vh]"
   >
     <!-- Fondo -->
     <img
@@ -28,24 +28,22 @@ import fondo from "../../public/images/hero_5.jpg";
       sizes="(max-width: 1920px) 100vw, 1920px"
     />
 
-    <!-- Overlay oscuro -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Overlay (lo dejamos oscuro para mantener dramatismo visual) -->
+    <div class="absolute inset-0 bg-black/55"></div>
 
-    <div class="shell relative z-10 w-full flex items-center min-h-screen justify-center">
+    <div
+      class="shell relative z-10 w-full flex items-center min-h-screen justify-center"
+    >
       <div
         class="hero__inner js-section-fullheight min-h-screen flex items-center justify-center"
       >
-        <div class="hero__content text-center text-osp">
+        <div class="hero__content text-center">
           <div class="hero__subtitle">
-            <h6 class="text-osp-accent">
-              {Title}
-            </h6>
+            <h6 class="text-osp-accent">{Title}</h6>
           </div>
 
           <div class="hero__title js-title">
-            <h1 class="h1">
-              {Subtitle}
-            </h1>
+            <h1 class="h1 text-white drop-shadow-lg">{Subtitle}</h1>
           </div>
         </div>
       </div>

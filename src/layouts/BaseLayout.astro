@@ -37,12 +37,13 @@ const { title = "Estudio Jurídico" } = Astro.props;
   >
     <div class="overlay" data-body-overlay></div>
 
+    {/* HEADER FIJO, FUERA DEL WRAPPER */}
+    <Header />
+
     <div class="wrapper bg-osp text-osp">
       <NavigationOverlay />
 
       <div class="wrapper__inner">
-        <Header />
-
         <main class="main">
           <slot />
         </main>

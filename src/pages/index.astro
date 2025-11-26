@@ -6,19 +6,19 @@ import SectionImageContent from "../components/SectionImageContent.astro";
 import Section2ImagesContent from "../components/Section2ImagesContent.astro";
 import CTASection from "../components/CTASection.astro";
 
-import abogada_1 from "../../public/images/Abogada_01.png";
-import abogada_2 from "../../public/images/Abogada_02.png";
+import abogada_1 from "../../public/images/Abogada_01_home.png";
+import abogada_2 from "../../public/images/Abogada_02_home.png";
 
 import servicio from "../../public/images/servicios.jpg";
 import metodo from "../../public/images/metodo.jpg";
 ---
 
-<BaseLayout title="Inicio | OSP Abogadas">
+<BaseLayout title="Inicio | OSP Abogados">
   <Hero />
 
   <SectionHeading
-    subtitle="Bienvenidas a"
-    title="OSP Abogadas"
+    subtitle="Bienvenido a"
+    title="OSP Abogados"
   />
 
   <Section2ImagesContent
@@ -48,6 +48,7 @@ import metodo from "../../public/images/metodo.jpg";
     text=""
     linkHref="/about"
     linkText="Nuestro método"
+    reversed={false}
   />
 
   <CTASection

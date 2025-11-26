@@ -2,11 +2,9 @@
 import fondo from "../../public/images/hero_5.jpg";
 ---
 
-<section class="mt-0 bg-osp">
-  <div
-    class="hero image-fit js-section-fullheight-wrapper hero--small-title-mobile relative min-h-screen"
-  >
-    <!-- Fondo -->
+<section class="hero-adjust relative">
+  <div class="relative h-full overflow-hidden">
+    {/* Fondo */}
     <img
       width="1920"
       height="1280"
@@ -18,42 +16,63 @@ import fondo from "../../public/images/hero_5.jpg";
       sizes="(max-width: 1920px) 100vw, 1920px"
     />
 
-    <!-- Overlay oscuro -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    {/* Overlay sombreado en toda la sección (más oscuro) */}
+    <div
+      class="absolute inset-0 bg-gradient-to-b
+             from-[rgba(38,35,33,0.82)]
+             via-[rgba(38,35,33,0.90)]
+             to-[rgba(38,35,33,0.96)]"
+    >
+    </div>
 
-    <div class="shell relative z-10 w-full flex items-center min-h-screen justify-center">
+    {/* Contenido centrado */}
+    <div class="shell relative z-10 flex items-center h-full">
       <div
-        class="hero__inner js-section-fullheight min-h-screen flex items-center justify-center"
+        class="max-w-3xl mx-auto text-center text-osp-light hero-text-shadow"
       >
-        <div class="hero__content text-center text-osp">
-          <p class="mb-[30px] pb-10 text-4xl md:text-5xl font-light tracking-[0.4em] uppercase text-osp-accent">
-            OSP Abogadas
-          </p>
+        <p
+          class="text-xs md:text-sm tracking-[0.25em] uppercase text-osp-accent mb-4"
+        >
+          OSP Abogados
+        </p>
 
-          <div class="hero__subtitle">
-            <h6 class="text-osp-muted">
-              Somos abogadas de
-            </h6>
-          </div>
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white mb-4"
+        >
+          ¿Tenés un <span class="text-osp-accent">problema legal</span> y no sabés
+          por dónde <span class="text-osp-accent">empezar</span>?
+        </h1>
 
-          <div class="hero__title js-title">
-            <div class="hero__words">
-              <p>Derecho Laboral</p>
-              <p>Derecho Civil</p>
-              <p>Derechos del consumidor</p>
-              <p>Amparos de Salud</p>
-              <p>Contratos</p>
-              <p>Sucesiones</p>
-              <p>Negociación</p>
-              <p>Resolución de conflictos</p>
-            </div>
+        <p class="text-lg md:text-xl text-white mb-3">
+          Tu <span class="text-osp-accent">tranquilidad jurídica</span> no puede
+          esperar.
+        </p>
 
-            <h1 class="h1"></h1>
-          </div>
+        <p class="text-sm md:text-base text-white/85 mb-8">
+          Te acompañamos en cada paso con asesoramiento claro, cercano y
+          profesional.
+        </p>
+
+        {/* CTA principal + secundario */}
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contacto"
+            class="btn-osp-primary inline-flex items-center justify-center text-sm md:text-base"
+          >
+            ¡Necesito asesoramiento legal ya!
+          </a>
+
+          <a
+            href="#reserva"
+            class="btn-osp-secondary inline-flex items-center justify-center text-sm md:text-base"
+          >
+            Agendar una consulta
+          </a>
         </div>
       </div>
     </div>
 
+    {/* Flecha scroll (opcional) */}
     <a
       href="#inicio"
       class="btn-scroll-to-next-section js-btn-scroll-to absolute bottom-6 left-1/2 -translate-x-1/2"

@@ -2,16 +2,16 @@
 const { subtitle, title } = Astro.props;
 ---
 
-<section class="section-heading bg-osp">
+<section class="section-heading section-heading--osp" id="inicio">
   <div class="shell">
     {subtitle && (
-      <h5 class="h5 text-osp-muted mb-2">
+      <h5 class="h5 section-heading__subtitle">
         {subtitle}
       </h5>
     )}
 
     {title && (
-      <h2 class="h2 text-osp-accent">
+      <h2 class="h2 section-heading__title">
         {title}
       </h2>
     )}
