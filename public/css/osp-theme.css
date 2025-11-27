@@ -1853,3 +1853,16 @@ input[type="button"]:active {
     display: none;
   }
 }
+
+.osp-modal__actions {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.osp-modal__cta {
+  padding-inline: 2.4rem;
+  padding-block: 0.85rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}
