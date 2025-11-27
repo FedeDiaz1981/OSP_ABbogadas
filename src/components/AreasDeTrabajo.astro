@@ -71,7 +71,7 @@ const secondLine = words.slice(midIndex).join(" ");
     </div>
   </div>
 
-  {/* MODAL DETALLE SERVICIO */}
+   {/* MODAL DETALLE SERVICIO */}
   <div id="osp-service-modal" class="osp-modal" aria-hidden="true">
     <div class="osp-modal__backdrop"></div>
 
@@ -82,10 +82,20 @@ const secondLine = words.slice(midIndex).join(" ");
 
       <h4 class="osp-modal__title"></h4>
       <p class="osp-modal__text"></p>
+
+      <div class="osp-modal__actions">
+        <button
+          type="button"
+          class="btn btn-osp-primary osp-modal__cta mt-8 center-block"
+        >
+          Agendar consulta
+        </button>
+      </div>
     </div>
   </div>
 
-  <script>
+
+    <script>
     if (typeof window !== "undefined") {
       window.addEventListener("DOMContentLoaded", () => {
         const modal = document.getElementById(
@@ -105,6 +115,9 @@ const secondLine = words.slice(midIndex).join(" ");
         const backdrop = modal.querySelector(
           ".osp-modal__backdrop"
         ) as HTMLElement | null;
+        const ctaBtn = modal.querySelector(
+          ".osp-modal__cta"
+        ) as HTMLButtonElement | null;
 
         if (!titleEl || !textEl || !closeBtn || !backdrop) return;
 
@@ -127,6 +140,12 @@ const secondLine = words.slice(midIndex).join(" ");
           if (event.key === "Escape") closeModal();
         });
 
+        if (ctaBtn) {
+          ctaBtn.addEventListener("click", () => {
+            window.location.href = "/contact";
+          });
+        }
+
         document.querySelectorAll("[data-service-pill]").forEach((el) => {
           const btn = el as HTMLButtonElement;
 
@@ -139,4 +158,5 @@ const secondLine = words.slice(midIndex).join(" ");
       });
     }
   </script>
+
 </section>

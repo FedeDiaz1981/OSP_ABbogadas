@@ -7116,8 +7116,8 @@ body.no-scroll {
 .section-navigation[data-nav] {
   /* position: fixed; */
   inset: 0;
-  z-index: 30;            /* por encima del contenido normal */
-  opacity: 0;
+  z-index: 90;            /* por encima del contenido normal */
+  
   pointer-events: none;
   transition: opacity 0.3s;
 }

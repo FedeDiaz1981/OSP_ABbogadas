@@ -1,62 +1,73 @@
-<section class="section-navigation" data-nav>
-  <div class="section__overlay" data-nav-overlay></div>
+---
+// src/components/NavigationOverlay.astro
+---
 
+<section
+  class="section-navigation"
+  data-nav
+>
+  {/* Overlay oscuro */}
   <div
-    class="section__inner flex flex-col items-end min-h-screen px-6 pt-10 pb-8 bg-[#111111] text-white"
-  >
-    <!-- Cerrar -->
-    <div class="menu-close mb-6" data-menu-close>
-      <img
-        src="https://www.stanchierifamilylaw.com/wp-content/themes/stanchieri-family-new/resources/images/icon-close.svg"
-        alt="Cerrar menú"
-        class="w-6 h-6 cursor-pointer invert"
-      />
-    </div>
+    class="section__overlay"
+    data-nav-overlay
+  ></div>
 
-    <!-- Menú -->
-    <nav class="nav w-full">
-      <ul class="menu flex flex-col items-end text-right space-y-3 text-lg tracking-[0.2em] uppercase">
-        <li class="menu-item">
-          <a
-            href="/services"
-            class="text-white hover:text-osp-accent transition-colors duration-200"
-          >
-            Servicios
+  {/* Panel */}
+  <div
+    class="section__inner flex flex-col items-end px-7 pt-8 pb-10 text-white"
+  >
+    {/* Cerrar */}
+    <button
+      class="menu-close nav-close-btn"
+      type="button"
+      data-menu-close
+      aria-label="Cerrar menú"
+    >
+      ✕
+    </button>
+
+    {/* Menú */}
+    <nav class="nav w-full mt-8">
+      <ul class="nav-menu">
+        <li class="nav-menu__item">
+          <a href="/services" class="nav-menu__link">
+            Nuestros servicios
           </a>
         </li>
-        <li class="menu-item">
-          <a
-            href="/team"
-            class="text-white hover:text-osp-accent transition-colors duration-200"
-          >
-            Equipo
+        <li class="nav-menu__item">
+          <a href="/team" class="nav-menu__link">
+            Nuestro equipo
           </a>
         </li>
-        <li class="menu-item">
-          <a
-            href="/about"
-            class="text-white hover:text-osp-accent transition-colors duration-200"
-          >
-            Método
+        <li class="nav-menu__item">
+          <a href="/about" class="nav-menu__link">
+            Nuestro método
           </a>
         </li>
-        <li class="menu-item">
-          <a
-            href="/contact"
-            class="text-white hover:text-osp-accent transition-colors duration-200"
-          >
+        <li class="nav-menu__item">
+          <a href="/contact" class="nav-menu__link">
             Contacto
           </a>
         </li>
       </ul>
     </nav>
 
-    <!-- Botón -->
-    <a
-      href="/book-consultation"
-      class="btn btn-osp-primary md:mt-auto"
-    >
-      Reservar consulta
-    </a>
+    {/* Botón reservar */}
+    <div class="nav-cta mt-10 w-full flex justify-center">
+      <a href="/book-consultation" class="btn-osp-primary nav-cta__button">
+        Reservar consulta
+      </a>
+    </div>
   </div>
 </section>
+
+{/* FAB MENÚ SOLO MOBILE (fuera del section) */}
+<button
+  type="button"
+  class="nav-fab md:hidden"
+  data-nav-fab
+  data-menu-toggle
+  aria-label="Abrir menú"
+>
+  <span>Menú</span>
+</button>
