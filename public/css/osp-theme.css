@@ -513,6 +513,66 @@ input[type="button"]:active {
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.75);
 }
 
+.hero-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.hero-cta-button {
+  width: min(100%, 26rem);
+  min-height: 3rem;
+  padding-inline: 1.55rem;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.hero-cta-button--whatsapp {
+  width: min(100%, 32rem);
+  border-color: #25d366;
+  background-color: #25d366;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.hero-cta-button--whatsapp:hover {
+  border-color: #1ebe5b;
+  background-color: #1ebe5b;
+  color: #ffffff;
+}
+
+.hero-scroll-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 179, 90, 0.75);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 20;
+}
+
+.hero-scroll-arrow span {
+  width: 0.85rem;
+  height: 0.85rem;
+  display: block;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.hero-scroll-arrow:hover {
+  background: var(--osp-accent);
+  color: #111111;
+  border-color: var(--osp-accent);
+}
+
 /* Marco/sombra detrás de las fotos */
 .section-image-content__image::after {
   content: "";

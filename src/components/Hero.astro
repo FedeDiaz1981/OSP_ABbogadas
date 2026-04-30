@@ -31,7 +31,7 @@ import fondo from "../../public/images/hero_5.jpg";
         class="max-w-3xl mx-auto text-center text-osp-light hero-text-shadow"
       >
         <p
-          class="text-xs md:text-sm tracking-[0.25em] uppercase text-osp-accent mb-4"
+          class="text-xs md:text-sm tracking-[0.25em] uppercase text-osp-accent mb-4 hidden"
         >
           OSP Abogados
         </p>
@@ -54,33 +54,46 @@ import fondo from "../../public/images/hero_5.jpg";
         </p>
 
         {/* CTA principal + secundario */}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="hero-cta-stack">
           <a
-            href="/contact"
-            class="btn-osp-primary inline-flex items-center justify-center text-sm md:text-base"
+            href="https://wa.me/541126241878?text=Hola!%20Quiero%20reservar%20una%20consulta"
+            class="btn-osp-primary hero-cta-button hero-cta-button--whatsapp inline-flex items-center justify-center gap-3 text-sm md:text-base"
           >
-            ¡Necesito asesoramiento legal ya!
+            <svg
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+              focusable="false"
+              class="h-5 w-5 shrink-0"
+            >
+              <path
+                fill="currentColor"
+                d="M19.11 17.2c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.35-1.59-1.5-1.86-.16-.27-.02-.42.11-.56.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.91 2.92 4.62 4.09.65.28 1.15.45 1.55.57.65.21 1.25.18 1.72.11.52-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31Z"
+              />
+              <path
+                fill="currentColor"
+                d="M16.01 3.2c-6.97 0-12.63 5.67-12.63 12.63 0 2.22.58 4.39 1.68 6.3L3.2 28.8l6.84-1.79a12.58 12.58 0 0 0 5.96 1.51h.01c6.96 0 12.63-5.67 12.63-12.63S22.98 3.2 16.01 3.2Zm0 23.19h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.22-4.06 1.06 1.08-3.96-.25-.41a10.48 10.48 0 0 1-1.61-5.5c0-5.82 4.74-10.56 10.57-10.56 2.82 0 5.47 1.1 7.46 3.1a10.49 10.49 0 0 1 3.09 7.46c0 5.83-4.74 10.57-10.54 10.57Z"
+              />
+            </svg>
+            <span>¡Necesito hablar con un abogado urgente!</span>
           </a>
 
           <a
             href="/contact"
-            class="btn-osp-secondary inline-flex items-center justify-center text-sm md:text-base"
+            class="btn-osp-primary hero-cta-button inline-flex items-center justify-center text-sm md:text-base"
           >
-            Agendar una consulta
+            Quiero contactar a un abogado
           </a>
         </div>
       </div>
     </div>
 
-    {/* Flecha scroll (opcional) */}
+    {/* Flecha scroll */}
     <a
       href="#inicio"
-      class="btn-scroll-to-next-section js-btn-scroll-to absolute bottom-6 left-1/2 -translate-x-1/2"
+      class="btn-scroll-to-next-section js-btn-scroll-to hero-scroll-arrow absolute bottom-6 left-1/2 -translate-x-1/2"
+      aria-label="Bajar a la siguiente sección"
     >
-      <img
-        src="https://www.stanchierifamilylaw.com/wp-content/themes/stanchieri-family-new/resources/images/arrow-down-light.svg"
-        alt="Bajar"
-      />
+      <span aria-hidden="true"></span>
     </a>
   </div>
 </section>
