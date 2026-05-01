@@ -7,13 +7,14 @@
 >
   <div class="header__inner relative flex items-center justify-between">
     {/* Logo */}
-    <a href="/" class="logo">
+    <a href="/" class="logo flex items-center gap-3">
       <img
         src="/images/logo-osp.png"
         alt="OSP Abogadas"
         loading="lazy"
-        class="max-h-25 w-auto"
+        class="h-[5rem] min-w-[5rem] md:h-[8rem] md:min-w-[9rem]"
       />
+      <span class="text-lg font-semibold text-black">OSP Abogados</span>
     </a>
 
     {/* NAV DESKTOP CENTRADO */}
@@ -21,39 +22,57 @@
       class="header__nav hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2"
     >
       <a
+        href="/"
+        class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
+      >
+        Inicio
+      </a>
+      <a
         href="/team"
         class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
       >
-        Nuestro equipo
+        Quienes somos
       </a>
 
       <a
         href="/services"
         class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
       >
-        Nuestros servicios
+        Servicios
       </a>
 
       <a
         href="/about"
         class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
       >
-        Nuestro método
+        Método
       </a>
 
-      <a
+      <!-- <a
         href="/contact"
         class="header__link text-[0.7rem] md:text-xs tracking-[0.28em] uppercase"
       >
         Contacto
-      </a>
+      </a> -->
 
       <a
-        href="/contact"
+        href="https://wa.me/5491130191878?text=Hola!%20Quiero%20reservar%20una%20consulta"
         class="inline-flex items-center px-5 py-2 rounded-full border border-osp-accent bg-osp-accent text-[0.7rem] font-semibold tracking-[0.24em] uppercase text-white hover:bg-osp-accent-hover hover:-translate-y-[1px] transition transform shadow-md hover:shadow-lg"
       >
         Reservar consulta
       </a>
+      <!--+5491130191878 -->
+      
     </nav>
+    {/* FAB MENÚ SOLO MOBILE (fuera del section) */}
+      <button
+        type="button"
+        class="nav-fab md:hidden"
+        data-nav-fab
+        data-menu-toggle
+        aria-label="Abrir menú"
+      >
+        <span>Menú</span>
+      </button>
   </div>
 </header>

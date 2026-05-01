@@ -26,7 +26,22 @@ import Hero2 from "../components/Hero_2.astro";
           ¿Tenés un problema legal y no sabés qué hacer? En OSP Abogadas estamos para ayudarte.
         </p>
 
-        <form class="consultation__form space-y-4 text-left">
+        <form
+          class="consultation__form space-y-4 text-left"
+          action="/contact.php"
+          method="POST"
+          accept-charset="UTF-8"
+        >
+          <input type="hidden" name="formulario" value="Reserva de consulta" />
+          <input
+            type="text"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            class="hidden"
+          />
+
           <div class="grid gap-4 md:grid-cols-2">
             <input
               type="text"
